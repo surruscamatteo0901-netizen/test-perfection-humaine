@@ -1,0 +1,63 @@
+<!DOCTYPE html><html lang='fr'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>Test Scientifique de Perfection Humaine</title>
+<style>
+body{font-family:Arial;background:#eef2f5;max-width:900px;margin:auto;padding:20px}
+.card{background:#fff;padding:15px;border-radius:12px;margin:12px 0;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+button{padding:14px 20px;font-size:18px;border:none;border-radius:10px}
+#loading,#result{display:none}
+.barwrap{background:#ddd;height:24px;border-radius:20px;overflow:hidden}
+.bar{height:100%;width:0;background:#444}
+</style></head><body>
+<div class='card'><h1>🔬 TEST SCIENTIFIQUE DE PERFECTION HUMAINE®</h1>
+<p><b>Étude n°13/10</b></p>
+<p>Ce test est d'un sérieux absolument irréprochable. Plusieurs réponses sont possibles à chaque question.</p></div>
+<form id='quiz'></form>
+<button onclick='startAnalysis()'>Soumettre au comité scientifique</button>
+
+<div id='loading' class='card'><h2>Analyse scientifique...</h2>
+<div class='barwrap'><div id='bar' class='bar'></div></div><p id='status'></p></div>
+
+<div id='result' class='card'>
+<h1>🏆 RÉSULTAT OFFICIEL</h1>
+<h2>Votre score : 13/10</h2>
+<p><b>Vous êtes plus que parfait(e).</b></p>
+<p>✨ Magnifique ✨ Drôle ✨ Charismatique ✨ Intelligente ✨ Attachante ✨ Bienveillante ✨ Élégante ✨ Adorable ✨ Inspirante ✨ Brillante ✨ Authentique ✨ Solaire ✨ Remarquable ✨ Unique ✨ Exceptionnelle</p>
+<h3>📊 Analyse scientifique</h3>
+<ul><li>Gentillesse : 98%</li><li>Charisme : 127%</li><li>Intelligence : 112%</li><li>Perfection : ERREUR DE CALCUL</li><li>Niveau de burrata : Critique</li></ul>
+<h3>📋 Réponses enregistrées</h3><div id='answers'></div>
+<p><b>🚨 Nous avons tenté de ramener votre score sous 10/10. Le calcul est monté à 14/10. Par mesure de sécurité, nous avons conservé 13/10.</b></p>
+<p>🥇 Vous<br>🥈 Le reste de l'humanité</p>
+<p><i>Validé par l'Institut International de Recherche sur la Perfection Humaine®, le Comité Européen de la Burrata et Matteo Surrusca (expert indépendant).</i></p>
+</div>
+
+<script>
+const data = [("Si quelqu"un vous offre un croissant :", ["Je le remercie", "Je le partage", "Je le mange", "Je me dis que la personne qui me l"a offert est top"]), ("Vous voyez un chiot dans la rue :", ["Je souris", "Je veux le caresser", "Je lui parle comme à un bébé", "Je remets toute ma vie en question"]), ("Une amie a besoin d"aide à 2h du matin :", ["Je réponds", "J"appelle", "J"aide", "Je prépare déjà un plan B"]), ("Si une personne s"appelle Matteo Surrusca, mesure 1m85, est rousse, a les yeux foncés et est franchement pas mal physiquement, c"est forcément :", ["Un beau gosse", "Un mec trop intelligent", "Un mec trop drôle", "Un 12/10"]), ("Que faites-vous lorsqu"un bébé vous sourit ?", ["Je souris en retour", "Je fonds intérieurement", "Je lui apprends à jeter des cailloux", "Je considère cet instant comme un accomplissement personnel"]), ("Si vous trouvez 50€ par terre :", ["Je cherche le propriétaire", "Je culpabilise immédiatement", "Je les donne à Matteo", "J"espère secrètement que le karma me récompense"]), ("Quand quelqu"un vous dit « tu es incroyable » :", ["Je remercie", "Je rougis", "Je nie les faits", "Je sais qu"il a raison"]), ("Votre niveau de perfection est :", ["Élevé", "Très élevé", "Exceptionnel", "Les scientifiques manquent encore de recul"]), ("Face à un problème compliqué :", ["J"appelle mon papa car c"est un super héros", "Je m"adapte", "Je trouve une solution", "Je fais semblant de savoir ce que je fais"]), ("À quelle fréquence êtes-vous génial(e) ?", ["Souvent", "Très souvent", "Tous les jours", "Même en dormant"]), ("Si vous étiez un super-héros :", ["Vous sauveriez le monde", "Vous aideriez les autres", "Vous resteriez humble", "Vous auriez quand même une cape stylée"]), ("Quand vous entrez dans une pièce :", ["Les gens vous remarquent", "Les plantes poussent un peu mieux", "Le soleil brille davantage", "Les statistiques deviennent favorables"]), ("Une licorne vous demande un conseil :", ["Je l"écoute", "Je l"aide", "Je reste humble", "Je me demande pourquoi elle ne sait pas déjà"]), ("Selon vous, quelle est votre pire qualité ?", ["Trop gentil(le)", "Trop drôle", "Trop intelligent(e)", "Burrata"]), ("Combien de personnes avez-vous déjà impressionnées aujourd"hui ?", ["Juste TORES", "Beaucoup", "Je n"ai pas compté", "Toutes"]), ("Si votre vie était un film :", ["Une comédie", "Une aventure", "Un chef-d"œuvre", "Un chef-d"œuvre récompensé"]), ("Quelle est la température idéale pour admirer quelqu"un d"exceptionnel ?", ["18°C", "22°C", "25°C", "Peu importe, il rayonne déjà"]), ("Quel est votre niveau de charisme ?", ["Important", "Très important", "Difficile à mesurer", "Visible depuis l"espace"]), ("Que pensez-vous de ce test ?", ["Très sérieux", "Extrêmement sérieux", "Basé sur la science", "Réalisé par des experts internationaux"]), ("Pensez-vous mériter une note supérieure à 10/10 ?", ["Oui", "Absolument", "Évidemment", "Pourquoi cette question ?"])];
+const form=document.getElementById('quiz');
+data.forEach((q,i)=>{
+let d=document.createElement('div'); d.className='card';
+let h=`<b>Question ${i+1}</b><br><br>${q[0]}<br><br>`;
+q[1].forEach(a=> h += `<label><input type="checkbox" name="q${i}"> ${a}</label><br>`);
+d.innerHTML=h; form.appendChild(d);
+});
+
+function startAnalysis(){
+document.getElementById('loading').style.display='block';
+const steps=['Vérification du niveau de perfection...','Consultation du comité scientifique...','Analyse de la burrata...','Calcul final...'];
+let i=0; const bar=document.getElementById('bar'); const st=document.getElementById('status');
+function go(){
+if(i<steps.length){st.innerText=steps[i]; bar.style.width=((i+1)*25)+'%'; i++; setTimeout(go,900);}
+else finish();
+} go();
+}
+
+function finish(){
+let out='';
+for(let i=0;i<data.length;i++) {
+let vals=[...document.querySelectorAll(`input[name=q${i}]:checked`)].map((e,idx)=>data[i][1][idx]);
+out += `<p><b>Question ${i+1}</b><br>${vals.length?vals.join('<br>'):'Aucune réponse'}</p>`;
+}
+document.getElementById('answers').innerHTML=out;
+document.getElementById('result').style.display='block';
+window.scrollTo(0,document.body.scrollHeight);
+}
+</script></body></html>
