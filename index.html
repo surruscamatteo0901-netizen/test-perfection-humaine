@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Test Scientifique de Perfection Humaine®</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#eef2f5;
+padding:15px;
+margin:0;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:20px;
+margin-bottom:20px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+.question{
+margin-bottom:30px;
+}
+
+.question h3{
+margin-bottom:10px;
+}
+
+label{
+display:block;
+margin:8px 0;
+}
+
+button{
+width:100%;
+padding:18px;
+font-size:20px;
+border:none;
+border-radius:15px;
+background:#4CAF50;
+color:white;
+font-weight:bold;
+}
+
+#result{
+display:none;
+}
+
+.reponse{
+background:#f5f5f5;
+padding:10px;
+border-radius:10px;
+margin:10px 0;
+}
+
+.score{
+font-size:40px;
+font-weight:bold;
+color:#4CAF50;
+text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h1>🔬 TEST SCIENTIFIQUE DE PERFECTION HUMAINE®</h1>
+
+<p><b>Étude n°13/10</b></p>
+
+<p>
+Ce test est d'un sérieux absolument irréprochable.
+Plusieurs réponses sont possibles à chaque question.
+</p>
+</div>
+
+<form id="quiz">
+<div class="card question">
+<h3>1. Si quelqu’un vous offre un croissant :</h3>
+
+<label><input type="checkbox" name="q1" value="Je le remercie"> Je le remercie</label>
+<label><input type="checkbox" name="q1" value="Je le partage"> Je le partage</label>
+<label><input type="checkbox" name="q1" value="Je le mange"> Je le mange</label>
+<label><input type="checkbox" name="q1" value="Je me dis que la personne qui me l’a offert est top"> Je me dis que la personne qui me l’a offert est top</label>
+</div>
+
+<div class="card question">
+<h3>2. Vous voyez un chiot dans la rue :</h3>
+
+<label><input type="checkbox" name="q2" value="Je souris"> Je souris</label>
+<label><input type="checkbox" name="q2" value="Je veux le caresser"> Je veux le caresser</label>
+<label><input type="checkbox" name="q2" value="Je lui parle comme à un bébé"> Je lui parle comme à un bébé</label>
+<label><input type="checkbox" name="q2" value="Je remets toute ma vie en question"> Je remets toute ma vie en question</label>
+</div>
+
+<div class="card question">
+<h3>3. Une amie a besoin d’aide à 2h du matin :</h3>
+
+<label><input type="checkbox" name="q3" value="Je réponds"> Je réponds</label>
+<label><input type="checkbox" name="q3" value="J’appelle"> J’appelle</label>
+<label><input type="checkbox" name="q3" value="J’aide"> J’aide</label>
+<label><input type="checkbox" name="q3" value="Je prépare déjà un plan B"> Je prépare déjà un plan B</label>
+</div>
+
+<div class="card question">
+<h3>4. Si une personne s’appelle Matteo Surrusca, mesure 1m85, est rousse, a les yeux foncés et est franchement pas mal physiquement, c’est forcément :</h3>
+
+<label><input type="checkbox" name="q4" value="Un beau gosse"> Un beau gosse</label>
+<label><input type="checkbox" name="q4" value="Un mec trop intelligent"> Un mec trop intelligent</label>
+<label><input type="checkbox" name="q4" value="Un mec trop drôle"> Un mec trop drôle</label>
+<label><input type="checkbox" name="q4" value="Un 12/10"> Un 12/10</label>
+</div>
+
+<div class="card question">
+<h3>5. Que faites-vous lorsqu’un bébé vous sourit ?</h3>
+
+<label><input type="checkbox" name="q5" value="Je souris en retour"> Je souris en retour</label>
+<label><input type="checkbox" name="q5" value="Je fonds intérieurement"> Je fonds intérieurement</label>
+<label><input type="checkbox" name="q5" value="Je lui apprends à jeter des cailloux"> Je lui apprends à jeter des cailloux</label>
+<label><input type="checkbox" name="q5" value="Je considère cet instant comme un accomplissement personnel"> Je considère cet instant comme un accomplissement personnel</label>
+</div>
+
+<div class="card question">
+<h3>6. Si vous trouvez 50€ par terre :</h3>
+
+<label><input type="checkbox" name="q6" value="Je cherche le propriétaire"> Je cherche le propriétaire</label>
+<label><input type="checkbox" name="q6" value="Je culpabilise immédiatement"> Je culpabilise immédiatement</label>
+<label><input type="checkbox" name="q6" value="Je les donne à Matteo"> Je les donne à Matteo</label>
+<label><input type="checkbox" name="q6" value="J’espère secrètement que le karma me récompense"> J’espère secrètement que le karma me récompense</label>
+</div>
+
+<div class="card question">
+<h3>7. Quand quelqu’un vous dit « tu es incroyable » :</h3>
+
+<label><input type="checkbox" name="q7" value="Je remercie"> Je remercie</label>
+<label><input type="checkbox" name="q7" value="Je rougis"> Je rougis</label>
+<label><input type="checkbox" name="q7" value="Je nie les faits"> Je nie les faits</label>
+<label><input type="checkbox" name="q7" value="Je sais qu’il a raison"> Je sais qu’il a raison</label>
+</div>
+<div class="card question">
+<h3>8. Votre niveau de perfection est :</h3>
+
+<label><input type="checkbox" name="q8" value="Élevé"> Élevé</label>
+<label><input type="checkbox" name="q8" value="Très élevé"> Très élevé</label>
+<label><input type="checkbox" name="q8" value="Exceptionnel"> Exceptionnel</label>
+<label><input type="checkbox" name="q8" value="Les scientifiques manquent encore de recul"> Les scientifiques manquent encore de recul</label>
+</div>
+
+<div class="card question">
+<h3>9. Face à un problème compliqué :</h3>
+
+<label><input type="checkbox" name="q9" value="J'appelle mon papa car c'est un super héros"> J'appelle mon papa car c'est un super héros</label>
+<label><input type="checkbox" name="q9" value="Je m'adapte"> Je m'adapte</label>
+<label><input type="checkbox" name="q9" value="Je trouve une solution"> Je trouve une solution</label>
+<label><input type="checkbox" name="q9" value="Je fais semblant de savoir ce que je fais"> Je fais semblant de savoir ce que je fais</label>
+</div>
+
+<div class="card question">
+<h3>10. À quelle fréquence êtes-vous génial(e) ?</h3>
+
+<label><input type="checkbox" name="q10" value="Souvent"> Souvent</label>
+<label><input type="checkbox" name="q10" value="Très souvent"> Très souvent</label>
+<label><input type="checkbox" name="q10" value="Tous les jours"> Tous les jours</label>
+<label><input type="checkbox" name="q10" value="Même en dormant"> Même en dormant</label>
+</div>
+
+<div class="card question">
+<h3>11. Si vous étiez un super-héros :</h3>
+
+<label><input type="checkbox" name="q11" value="Vous sauveriez le monde"> Vous sauveriez le monde</label>
+<label><input type="checkbox" name="q11" value="Vous aideriez les autres"> Vous aideriez les autres</label>
+<label><input type="checkbox" name="q11" value="Vous resteriez humble"> Vous resteriez humble</label>
+<label><input type="checkbox" name="q11" value="Vous auriez quand même une cape stylée"> Vous auriez quand même une cape stylée</label>
+</div>
+
+<div class="card question">
+<h3>12. Quand vous entrez dans une pièce :</h3>
+
+<label><input type="checkbox" name="q12" value="Les gens vous remarquent"> Les gens vous remarquent</label>
+<label><input type="checkbox" name="q12" value="Les plantes poussent un peu mieux"> Les plantes poussent un peu mieux</label>
+<label><input type="checkbox" name="q12" value="Le soleil brille davantage"> Le soleil brille davantage</label>
+<label><input type="checkbox" name="q12" value="Les statistiques deviennent favorables"> Les statistiques deviennent favorables</label>
+</div>
+
+<div class="card question">
+<h3>13. Une licorne vous demande un conseil :</h3>
+
+<label><input type="checkbox" name="q13" value="Je l'écoute"> Je l'écoute</label>
+<label><input type="checkbox" name="q13" value="Je l'aide"> Je l'aide</label>
+<label><input type="checkbox" name="q13" value="Je reste humble"> Je reste humble</label>
+<label><input type="checkbox" name="q13" value="Je me demande pourquoi elle ne sait pas déjà"> Je me demande pourquoi elle ne sait pas déjà</label>
+</div>
+
+<div class="card question">
+<h3>14. Selon vous, quelle est votre pire qualité ?</h3>
+
+<label><input type="checkbox" name="q14" value="Trop gentil(le)"> Trop gentil(le)</label>
+<label><input type="checkbox" name="q14" value="Trop drôle"> Trop drôle</label>
+<label><input type="checkbox" name="q14" value="Trop intelligent(e)"> Trop intelligent(e)</label>
+<label><input type="checkbox" name="q14" value="Burrata"> Burrata</label>
+</div>
+<div class="card question">
+<h3>15. Combien de personnes avez-vous déjà impressionnées aujourd'hui ?</h3>
+
+<label><input type="checkbox" name="q15" value="Juste TORES"> Juste TORES</label>
+<label><input type="checkbox" name="q15" value="Beaucoup"> Beaucoup</label>
+<label><input type="checkbox" name="q15" value="Je n'ai pas compté"> Je n'ai pas compté</label>
+<label><input type="checkbox" name="q15" value="Toutes"> Toutes</label>
+</div>
+
+<div class="card question">
+<h3>16. Si votre vie était un film :</h3>
+
+<label><input type="checkbox" name="q16" value="Une comédie"> Une comédie</label>
+<label><input type="checkbox" name="q16" value="Une aventure"> Une aventure</label>
+<label><input type="checkbox" name="q16" value="Un chef-d'œuvre"> Un chef-d'œuvre</label>
+<label><input type="checkbox" name="q16" value="Un chef-d'œuvre récompensé"> Un chef-d'œuvre récompensé</label>
+</div>
+
+<div class="card question">
+<h3>17. Question scientifique : Quelle est la température idéale pour admirer quelqu'un d'exceptionnel ?</h3>
+
+<label><input type="checkbox" name="q17" value="18°C"> 18°C</label>
+<label><input type="checkbox" name="q17" value="22°C"> 22°C</label>
+<label><input type="checkbox" name="q17" value="25°C"> 25°C</label>
+<label><input type="checkbox" name="q17" value="Peu importe, il rayonne déjà"> Peu importe, il rayonne déjà</label>
+</div>
+
+<div class="card question">
+<h3>18. Quel est votre niveau de charisme ?</h3>
+
+<label><input type="checkbox" name="q18" value="Important"> Important</label>
+<label><input type="checkbox" name="q18" value="Très important"> Très important</label>
+<label><input type="checkbox" name="q18" value="Difficile à mesurer"> Difficile à mesurer</label>
+<label><input type="checkbox" name="q18" value="Visible depuis l'espace"> Visible depuis l'espace</label>
+</div>
+
+<div class="card question">
+<h3>19. Que pensez-vous de ce test ?</h3>
+
+<label><input type="checkbox" name="q19" value="Très sérieux"> Très sérieux</label>
+<label><input type="checkbox" name="q19" value="Extrêmement sérieux"> Extrêmement sérieux</label>
+<label><input type="checkbox" name="q19" value="Basé sur la science"> Basé sur la science</label>
+<label><input type="checkbox" name="q19" value="Réalisé par des experts internationaux"> Réalisé par des experts internationaux</label>
+</div>
+
+<div class="card question">
+<h3>20. Dernière question : Pensez-vous mériter une note supérieure à 10/10 ?</h3>
+
+<label><input type="checkbox" name="q20" value="Oui"> Oui</label>
+<label><input type="checkbox" name="q20" value="Absolument"> Absolument</label>
+<label><input type="checkbox" name="q20" value="Évidemment"> Évidemment</label>
+<label><input type="checkbox" name="q20" value="Pourquoi cette question ?"> Pourquoi cette question ?</label>
+</div>
+
+<div class="card">
+<button type="button" onclick="afficherResultat()">
+🏆 Soumettre au comité scientifique
+</button>
+</div>
+<div id="result" class="card">
+
+<div class="score">
+🏆 13/10
+</div>
+
+<h2 style="text-align:center;">
+Vous êtes plus que parfait(e)
+</h2>
+
+<p>
+Après vérification de vos réponses, de votre personnalité,
+de votre énergie, de votre charisme et de l'avis totalement
+impartial du comité scientifique :
+</p>
+
+<h3>Qualificatifs retenus :</h3>
+
+<p>
+✨ Magnifique<br>
+✨ Drôle<br>
+✨ Charismatique<br>
+✨ Intelligente<br>
+✨ Attachante<br>
+✨ Bienveillante<br>
+✨ Élégante<br>
+✨ Adorable<br>
+✨ Inspirante<br>
+✨ Brillante<br>
+✨ Authentique<br>
+✨ Solaire<br>
+✨ Remarquable<br>
+✨ Unique<br>
+✨ Exceptionnelle
+</p>
+
+<hr>
+
+<h3>🔬 Analyse scientifique</h3>
+
+<ul>
+<li>Gentillesse : 98%</li>
+<li>Charisme : 127%</li>
+<li>Intelligence : 112%</li>
+<li>Niveau de perfection : ERREUR DE CALCUL</li>
+<li>Niveau de burrata : critique</li>
+</ul>
+
+<h3>🤖 Observations du laboratoire</h3>
+
+<p>
+✅ Vous appréciez les croissants.<br>
+✅ Vous avez une sensibilité particulière envers les chiots.<br>
+✅ Vous êtes capable de résoudre des problèmes complexes.<br>
+✅ Vous savez reconnaître un 12/10 lorsqu'il se présente.<br>
+✅ Votre potentiel dépasse les capacités de calcul de nos serveurs.
+</p>
+
+<hr>
+
+<h3>📋 Vos réponses</h3>
+
+<div id="listeReponses"></div>
+
+<hr>
+
+<h3>🚨 Alerte scientifique</h3>
+
+<p>
+Nous avons tenté de recalculer votre score afin de le ramener
+sous 10/10.
+</p>
+
+<p>
+Malheureusement le résultat est monté à 14/10.
+</p>
+
+<p>
+Par mesure de sécurité, nous avons décidé de conserver la note
+de 13/10.
+</p>
+
+<hr>
+
+<h3>🎖️ Classement mondial</h3>
+
+<p>
+🥇 Vous<br>
+🥈 Le reste de l'humanité
+</p>
+
+<p>
+<b>Validé par :</b><br><br>
+
+Institut International de Recherche sur la Perfection Humaine®<br>
+Comité Européen de la Burrata<br>
+Matteo Surrusca (expert indépendant)
+</p>
+
+</div>
+
+<script>
+
+function afficherResultat(){
+
+let reponses = "";
+let questions = document.querySelectorAll(".question");
+
+questions.forEach(function(question,index){
+
+let coches = question.querySelectorAll("input:checked");
+
+reponses += "<div class='reponse'>";
+reponses += "<b>Question " + (index+1) + "</b><br>";
+
+if(coches.length===0){
+
+reponses += "Aucune réponse sélectionnée";
+
+}else{
+
+coches.forEach(function(c){
+
+reponses += "✔ " + c.value + "<br>";
+
+});
+
+}
+
+reponses += "</div>";
+
+});
+
+document.getElementById("listeReponses").innerHTML = reponses;
+
+document.getElementById("result").style.display = "block";
+
+window.scrollTo({
+top: document.body.scrollHeight,
+behavior: "smooth"
+});
+
+}
+
+</script>
+
+</form>
+
+</body>
+</html>
+
