@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Test Scientifique de Perfection Humaine V2.1</title>
+<style>
+body{font-family:Arial,sans-serif;background:#eef2f5;padding:15px;max-width:900px;margin:auto}
+.card{background:#fff;border-radius:12px;padding:15px;margin:12px 0;box-shadow:0 2px 6px rgba(0,0,0,.1)}
+button{width:100%;padding:14px;font-size:18px;border:none;border-radius:10px}
+#result,#loading{display:none}
+</style>
+</head>
+<body>
+<div class="card">
+<h1>🔬 TEST SCIENTIFIQUE DE PERFECTION HUMAINE®</h1>
+<p><b>Étude n°13/10</b></p>
+<p>Plusieurs réponses sont possibles à chaque question.</p>
+</div>
+
+<div id="questions"></div>
+
+<button onclick="startAnalysis()">Soumettre au comité scientifique</button>
+
+<div id="loading" class="card">
+<h2>Analyse scientifique en cours...</h2>
+<p id="status">Initialisation...</p>
+</div>
+
+<div id="result" class="card">
+<h1>🏆 RÉSULTAT OFFICIEL</h1>
+<h2>Votre score : 13/10</h2>
+<p><b>Vous êtes plus que parfait(e).</b></p>
+<div id="answers"></div>
+</div>
+
+<script>
+var data = [
+["Si quelqu'un vous offre un croissant :",["Je le remercie","Je le partage","Je le mange","Je me dis que la personne qui me l'a offert est top"]],
+["Vous voyez un chiot dans la rue :",["Je souris","Je veux le caresser","Je lui parle comme à un bébé","Je remets toute ma vie en question"]],
+["Une amie a besoin d'aide à 2h du matin :",["Je réponds","J'appelle","J'aide","Je prépare déjà un plan B"]],
+["Si une personne s'appelle Matteo Surrusca, mesure 1m85, est rousse, a les yeux foncés et est franchement pas mal physiquement, c'est forcément :",["Un beau gosse","Un mec trop intelligent","Un mec trop drôle","Un 12/10"]],
+["Que faites-vous lorsqu'un bébé vous sourit ?",["Je souris en retour","Je fonds intérieurement","Je lui apprends à jeter des cailloux","Je considère cet instant comme un accomplissement personnel"]]
+];
+
+var container=document.getElementById('questions');
+
+for(var i=0;i<data.length;i++){
+ var div=document.createElement('div');
+ div.className='card';
+ var html='<b>Question '+(i+1)+'</b><br><br>'+data[i][0]+'<br><br>';
+ for(var j=0;j<data[i][1].length;j++){
+   html += '<label><input type="checkbox" name="q'+i+'" value="'+data[i][1][j]+'"> '+data[i][1][j]+'</label><br>';
+ }
+ div.innerHTML=html;
+ container.appendChild(div);
+}
+
+function startAnalysis(){
+ document.getElementById('loading').style.display='block';
+ var txt=document.getElementById('status');
+ setTimeout(function(){txt.innerHTML='Consultation du comité scientifique...';},800);
+ setTimeout(function(){txt.innerHTML='Analyse de la burrata...';},1600);
+ setTimeout(function(){finish();},2400);
+}
+
+function finish(){
+ var out='';
+ for(var i=0;i<data.length;i++){
+   var checked=document.querySelectorAll('input[name="q'+i+'"]:checked');
+   out += '<p><b>Question '+(i+1)+'</b><br>';
+   if(checked.length===0){out+='Aucune réponse';}
+   for(var k=0;k<checked.length;k++){out += checked[k].value+'<br>';}
+   out += '</p>';
+ }
+ document.getElementById('answers').innerHTML=out;
+ document.getElementById('result').style.display='block';
+}
+</script>
+</body>
+</html>
